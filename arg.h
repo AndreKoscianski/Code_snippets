@@ -1,8 +1,9 @@
 //----------------------------------------------------
 //  Exemplo
 //    ./a.out valor1=12.34 arq=/tmp/teste.dat flag3
-//    12.34 = atof (arg2str("valor1"))
-//    (NULL != arg2str ("flag3"))
+//  Resultado
+//    12.34  = atof (arg2str (argv, "valor1"))
+//    (NULL !=       arg2str (argv, "flag3"))
 //----------------------------------------------------
 char *arg2str (char *argv[], const char *nome) {
 
