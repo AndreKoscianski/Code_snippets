@@ -9,9 +9,9 @@ double Haversine (double lat1, double lon1,
    double dLat = radians ((lat2-lat1));
    double dLon = radians ((lon2-lon1)); 
    double a = 
-      sin (dLat / 2.0) * sin (dLat / 2.0) +
+      powl (sin (dLat / 2.0) , 2.0) +
       cos (radians (lat1)) * cos (radians (lat2)) * 
-      sin (dLon / 2.0) * sin (dLon / 2.0); 
+      powl (sin (dLon / 2.0) , 2.0); 
 
    double c = 2.0 * atan2 (sqrt (a), sqrt (1.0 - a)); 
 
