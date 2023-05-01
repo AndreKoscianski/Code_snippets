@@ -4,18 +4,16 @@
 #define radians(x) (x*M_PI/180.0)
 
 double Haversine (double lat1, double lon1, 
-                    double lat2, double lon2) {
+                  double lat2, double lon2) {
 
-   double dLat = radians ((lat2-lat1));
-   double dLon = radians ((lon2-lon1)); 
    double a = 
-      powl (sin (dLat / 2.0) , 2.0) +
-      cos (radians (lat1)) * cos (radians (lat2)) * 
-      powl (sin (dLon / 2.0) , 2.0); 
+      powl (sin (radians ((lat2-lat1)) / 2.0) , 2.0) 
+      +
+      cos (radians (lat1)) * 
+      cos (radians (lat2)) * 
+      powl (sin (radians ((lon2-lon1)) / 2.0) , 2.0); 
 
-   double c = 2.0 * atan2 (sqrt (a), sqrt (1.0 - a)); 
-
-   return 6371.0 * c;
+   return 6371.0 * 2.0 * atan2 (sqrt (a), sqrt (1.0 - a)); 
 }
 
 
